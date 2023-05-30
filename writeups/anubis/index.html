@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Hunter Ritter]">
+<meta name="description" content="Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further." />
+<meta name="keywords" content="homepage, blog" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/writeups/anubis/" />
+
+
+    <title>
+        
+            Anubis - An Insane Hack The Box Machine :: Hunter (Trey) Ritter 
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Anubis - An Insane Hack The Box Machine">
+<meta itemprop="description" content="Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further."><meta itemprop="datePublished" content="2023-05-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-05-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="961"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Anubis - An Insane Hack The Box Machine"/>
+<meta name="twitter:description" content="Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further."/>
+
+
+
+    <meta property="og:title" content="Anubis - An Insane Hack The Box Machine" />
+<meta property="og:description" content="Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/writeups/anubis/" /><meta property="og:image" content="/"/><meta property="article:section" content="writeups" />
+<meta property="article:published_time" content="2023-05-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-29T00:00:00+00:00" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-05-29 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Trey Ritter</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Posts</a></li><li><a href="/resume/">Resume</a></li><li><a href="/writeups/">Writeups</a></li>
+        <div class="submenu">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">en</a>
+                <div class="dropdown-content">
+                    
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/writeups/anubis/">Anubis - An Insane Hack The Box Machine</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="anubis">Anubis</h2>
+<p>This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.</p>
+<p><img src="/Ports.txt.png" alt="Ports"></p>
+<p>The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further.</p>
+<p>I set my eyes on the webpage at this point and had quite a difficult time getting the page to load correctly. I updated the /etc/hosts file to include the IP address with the domain name. Eventually, I was able to land on the webpage at https[://]www[.]windcorp[.]htb.</p>
+<p><img src="/webpage.png" alt="Webpage"></p>
+<p>Upon review of the webpage, it appeared to be a static page with minimal interaction other than a &lsquo;Contact Us&rsquo; section that required a name,  email, and a textbox. It was found that the form was vulnerable to XSS.</p>
+<p><img src="/xss.png" alt="XSS">
+<img src="/xss1.png" alt="XSS"></p>
+<p>Enumerating a bit more looking for SSTI, it was found that the form would except certain characters and continue validation. The accepted characters were &lt;% %&gt;.</p>
+<p><img src="/ssti.png" alt="SSTI">
+<img src="/ssti1.png" alt="SSTI"></p>
+<p>A few different tests were attempted to see what RCE was accepted using VBScript and leading to passing PowerShell through the VBScript for a Reverse Shell. I instructed the webserver to reach out to my kali machine and request a file called shell.ps1. Inside the shell.ps1 was a PowerShell script that would be executed to connect back to my listener for a reverse shell.</p>
+<p><img src="/revshell.png" alt="Revshell">
+<img src="/revshell1.png" alt="Revshell">
+<img src="/revshell2.png" alt="Revshell"></p>
+<p>Once a connection was established, I landed on a machine as nt authority/system. Running ipconfig on the machine, I found a different IP address than the one that was supplied for the box. Continuing enumeration of this box, I found a req.txt file which was a certificate.  After decoding it, a new subdomain was discovered called softwareportal.windcorp.htb. I added this to the /etc/hosts file on my attacking machine but does not appear to return anything at this point.</p>
+<p>A tunnel was established between my machine and the container.</p>
+<p><img src="/chisel.png" alt="Chisel">
+<img src="/chisel1.png" alt="Chisel"></p>
+<p>This allows me the ability to execute commands from my machine using native commands like nmap and proxying the website through my browser. While enumerating the tunnel, I attempted to route my browsers proxy to see the softwareportal.windcorp.htb website but I was not able to reach it through my browsers proxy. A workaround was to run proxychains curl softwareportal.windcorp.htb to display the source code of the website. While reviewing the source code, it was observed that a couple of the URLs had an IP address of the container to download a resource. An example of the download of 7zip can be found in these screenshots softwareportal.windcorp.htb.</p>
+<p><img src="/softwareportal.png" alt="Softwareportal">
+<img src="/softwareportal1.png" alt="Softwareportal"></p>
+<p>Using Responder, I sent a request to the URL replacing the IP address from the container to my IP address. This request responded with an NTLM hash for the user localadmin. Running this NTLM hash through Hashcat using the rockyou.txt password list, the hash was cracked.</p>
+<p><img src="/responder.png" alt="Responder">
+<img src="/responder1.png" alt="Responder"></p>
+<p>NTLM Hash</p>
+<p><img src="/responder2.png" alt="Responder"></p>
+<p>Crack the hash using Hashcat</p>
+<p><img src="/responder3.png" alt="Responder">
+<img src="/responder4.png" alt="Responder"></p>
+<p>Now that I have some credentials, I enumerated the SMB shares using the credentials and found a share called Shared. Inside the Shared share were a few different interesting files. One that contained software with the Jamovi download and the other containing files with a .omv extension. The Jamovi file was an .exe which needed to be installed and run on a Windows machine.</p>
+<p>Using Crackmapexec to enumerate the shares</p>
+<p><img src="/smb.png" alt="SMB"></p>
+<p>Using smbclient to access the SMB shares</p>
+<p><img src="/smbshares.png" alt="SMB"></p>
+<p>This was a good time for me to create a new Windows VM and adding the CommandoVM toolset. An open source search was conducted on Jamovi for any known exploits and was found that the program was vulnerable to XSS. The exploit lies within the column headers of the program. The exploit can be added into the program&rsquo;s column header using the GUI or it can be added/edited on the programs metadata.json file.</p>
+<p><img src="/sploit1.png" alt="Exploit"></p>
+<p>To view the JSON file, the .omv file can be unziped and a few different files can be seen, to include the metadata.json file. The way that I created the XSS payload was through the metadata.json file and edited one of the column headers. The payload was created to reach out to my IP and request a file called sploit.js. The file that I edited was the Whatif.omv file and placed it back in the SMB Shared directory. I have a server set up with the sploit.js file waiting for the Whatif.omv script to reach out and grab that sploit.js file. The sploit.js file is another payload that contains a PowerShell callback to my server looking for shell.ps1 which is the reverse shell that will connect to my machine.</p>
+<p><img src="/sploit.png" alt="Exploit">
+<img src="/sploit2.png" alt="Exploit"></p>
+<p>The reverse shell was established and I landed on the box as the user diegocruz. I began to enumerate the user and found the user.txt file.  The next steps required a couple different tools to include, certify.exe, rubeus.exe, ADCS.ps1, PowerView.ps1. Using Certify.exe, I can find any misconfigured certificates in Active Directory Certificate Services (AD CS).</p>
+<p><img src="/certify.png" alt="Certify">
+<img src="/certify1.png" alt="Certify"></p>
+<p>I found that the certificate that diegocruz has access to has the Template Name of Web with write permissions to a few different certificates. ADCS.ps1 is a PowerShell script that will overwrite the template name that is provided with the identity that is requested, in this instance, Administrator.</p>
+<p><img src="/adcs.png" alt="ADCS"></p>
+<p>Once this command has been executed, I use PowerShell to gci the certificate of the current user. Taking that certificate and using Rubeus.exe, I can ask for a TGT, or Ticket Granting Ticket, from Kerberos and obtain an NTLM hash.</p>
+<p><img src="/rubeus.png" alt="Rubeus"></p>
+<p>Once the NTLM hash has been obtained for the administrator user, I can use Psexec.py to PTH, or Pass the Hash, to obtain NT Authority/System on the box.</p>
+<p><img src="/psexec.png" alt="Psexec"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writeups on Hunter (Trey) Ritter</title>
+    <link>/writeups/</link>
+    <description>Recent content in Writeups on Hunter (Trey) Ritter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anubis - An Insane Hack The Box Machine</title>
+      <link>/writeups/anubis/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/writeups/anubis/</guid>
+      <description>Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further.</description>
+    </item>
+    
+    <item>
+      <title>Test showcase</title>
+      <link>/writeups/showcase/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/writeups/showcase/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit the Hugo website!</description>
+    </item>
+    
+  </channel>
+</rss>

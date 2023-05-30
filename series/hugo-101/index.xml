@@ -29,10 +29,10 @@ Visit the Hugo website!</description>
     
     <item>
       <title>Test showcase</title>
-      <link>/showcase/showcase/</link>
+      <link>/writeups/showcase/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/showcase/showcase/</guid>
+      <guid>/writeups/showcase/</guid>
       <description>Introduction This is bold text, and this is emphasized text.
 Visit the Hugo website!</description>
     </item>
