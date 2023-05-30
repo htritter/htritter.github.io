@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hunter (Trey) Ritter</title>
+    <link>/</link>
+    <description>Recent content on Hunter (Trey) Ritter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anubis - An Insane Hack The Box Machine</title>
+      <link>/showcase/anubis/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/showcase/anubis/</guid>
+      <description>Anubis This was a Windows box with an Insane rating from HTB. There were five Ports found with a few interesting ones to start probing for information.
+The first check was into the ports 135 and 445 to look for any enumeration through SMB. There was limited information found but one piece stuck out and that was the computer name, EARTH, and the domain name of windcorp.htb. With the limited information, crackmapexec did not return much which made me believe I would need credentials to get any further.</description>
+    </item>
+    
+    <item>
+      <title>Hunter (Trey) Ritter</title>
+      <link>/about/</link>
+      <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>whoami </description>
+    </item>
+    
+    <item>
+      <title>Hunter (Trey) Ritter</title>
+      <link>/resume/</link>
+      <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Resume Cyber Security Analyst
+hunter.trey.ritter@gmail.com
+EDUCATION
+Liberty University – Master of Science Cyber Security – October 2022
+Liberty University – Bachelor of Science Information Technology – August 2020
+Certifications
+CompTIA Security Plus – 2023
+Cellebrite Certified Operator (CCO) – 2022
+Cellebrite Certified Physical Analyst (CCPA) – 2022
+eLearnSecurity Junior Penetration Tester (eJPT) – 2022
+Offensive Security Certified Professional (OSCP) – In Progress
+EXPERIENCE
+FIRST COMMUNITY BANK – Remote | Cyber Security Analyst II | May 2022 – Present</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/my-first-post/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit the Hugo website!</description>
+    </item>
+    
+    <item>
+      <title>Test showcase</title>
+      <link>/showcase/showcase/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/showcase/showcase/</guid>
+      <description>Introduction This is bold text, and this is emphasized text.
+Visit the Hugo website!</description>
+    </item>
+    
+  </channel>
+</rss>
